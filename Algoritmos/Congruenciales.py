@@ -3,6 +3,7 @@ from Algoritmos.HullDobell import has_complete_sequence
 """
 xo = (aXo+c) mod m
 """
+
 xo = lambda a,x,c,m: ((a*x)+c)%m
 
 xi = lambda a,x,m: (a*x)%m
