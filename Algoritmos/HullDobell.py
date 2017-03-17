@@ -1,6 +1,6 @@
 from math import gcd as py_gcd
 
-def has_complet_sequence(a,m,c):
+def has_complete_sequence(a,m,c):
     return coprime(m,c) and divisible_by_factors(a,m) and four_divides(m,a)
 
 def coprime(a,b):
