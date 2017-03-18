@@ -4,7 +4,6 @@
 # Table module
 # Copyright (C) 2014 Musikhin Andrey <melomansegfault@gmail.com>
 
-
 import kivy
 from kivy.lang import Builder
 from kivy.graphics import Color, Rectangle
@@ -198,7 +197,7 @@ class ScrollViewTable(ScrollView):
             grid_height = float(self.children[0].height)
             scroll_height = float(grid_height - self.height)
             cur_cell = self.children[0].children[0]. \
-                cells[int(self.parent._chosen_row)][0]
+                cells[self.parent._chosen_row][0]
             cur_cell_height = float(cur_cell.height)
             cur_row_y = float(cur_cell.y)
             # The convert scroll Y position
