@@ -29,7 +29,7 @@ class CentrosData(BoxLayout):
         self.my_table.number_panel.auto_width = False
         self.my_table.number_panel.width_widget = 100
         self.my_table.number_panel.visible = False
-        self.my_table.grid.color = [0, 0, 1, 1]
+        self.my_table.grid.color = [0, 0.4, 0, 1]
         self.my_table.label_panel.color = [0, 1, 0, 1]
         self.my_table.number_panel.color = [0, 0, 1, 1]
         self.my_table.scroll_view.bar_width = 10

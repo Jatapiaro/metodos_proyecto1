@@ -1,0 +1,210 @@
+<CongruencialLinealScreen>:
+    ##external_name: internal_name
+    semilla: seed_input
+    a_value: a_input
+    c_value: c_input
+    modulo: modulo_input
+    iteraciones: iter_input
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 7
+        canvas.before:
+            Color:
+                rgb: 0, 0, .4
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            orientation: "horizontal"
+            BoxLayout:
+                id:drawing_box
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "30dp"
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "Xo: "
+
+            TextInput:
+                id: seed_input
+                input_filter: "int"
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "A: "
+
+            TextInput:
+                id: a_input
+                input_filter: "int"
+
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "C: "
+
+            TextInput:
+                id: c_input
+                input_filter: "int"
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "Mod: "
+
+            TextInput:
+                id: modulo_input
+                input_filter: "int"
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "Iter: "
+
+            TextInput:
+                id: iter_input
+                input_filter: "int"
+
+
+            Button:
+                text: "Generar"
+                on_press: root.validate_data()
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "30dp"
+            Button:
+                text: "Regresar al men\u00FA principal"
+                on_press: root.return_to_menu()
+
+
+<CongruencialMixtoScreen>:
+    ##external_name: internal_name
+    semilla: seed_input
+    a_value: a_input
+    c_value: c_input
+    modulo: modulo_input
+    iteraciones: iter_input
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 7
+        canvas.before:
+            Color:
+                rgb: 0, 0, .4
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            orientation: "horizontal"
+            BoxLayout:
+                id:drawing_box
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "30dp"
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "Xo: "
+
+            TextInput:
+                id: seed_input
+                input_filter: "int"
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "A: "
+
+            TextInput:
+                id: a_input
+                input_filter: "int"
+
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "C: "
+
+            TextInput:
+                id: c_input
+                input_filter: "int"
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "Mod: "
+
+            TextInput:
+                id: modulo_input
+                input_filter: "int"
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "Iter: "
+
+            TextInput:
+                id: iter_input
+                input_filter: "int"
+
+
+            Button:
+                text: "Generar"
+                on_press: root.validate_data()
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "30dp"
+            Button:
+                text: "Regresar al men\u00FA principal"
+                on_press: root.return_to_menu()
