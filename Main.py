@@ -1,5 +1,4 @@
 # coding=utf-8
-
 from Algoritmos.Congruenciales import congruencial_lineal,congruencial_mixto,congruencial_multiplicativo
 from ScreenObjects.CongruenciaLinealMock import CongruenciaLinealMock
 from ScreenObjects.CongruenciaLinealData import CongruenciaLinealData
@@ -8,7 +7,6 @@ from kivy.uix.screenmanager import ScreenManager,Screen
 from ScreenObjects.CentrosMock import CentrosMock
 from ScreenObjects.CentrosData import CentrosData
 from kivy.properties import ObjectProperty
-from kivy.uix.button import Button
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.lang import Builder

@@ -37,4 +37,22 @@ class CongruenciaLinealMock(BoxLayout):
         pass
 
     def _on_keyboard_down(self, keyboard, keycode, text, modifiers):
-        pass
+        """ Method of pressing keyboard  """
+        if keycode[0] == 273:   # UP
+            ##print(keycode)
+            self.my_table.scroll_view.up()
+        if keycode[0] == 274:   # DOWN
+            ##print(keycode)
+            self.my_table.scroll_view.down()
+        if keycode[0] == 281:   # PageDown
+            ##print(keycode)
+            self.my_table.scroll_view.pgdn()
+        if keycode[0] == 280:   # PageUp
+            ##print(keycode)
+            self.my_table.scroll_view.pgup()
+        if keycode[0] == 278:   # Home
+            ##print(keycode)
+            self.my_table.scroll_view.home()
+        if keycode[0] == 279:   # End
+            ##print(keycode)
+            self.my_table.scroll_view.end()
