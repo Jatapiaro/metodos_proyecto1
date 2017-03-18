@@ -17,8 +17,8 @@ class CongruenciaLinealData(BoxLayout):
         for i in range(l):
             self.my_table.add_row(
                 [Button,{'text': str(i), 'color_widget': [0, 0, 0.5, 1], 'color_click': [0, 1, 0, 1], 'size_hint_x': 1}],
-                [TextInput, {'text': str(xn[i]),'color_click': [1, 0, .5, 1], 'readonly':True, 'size_hint_x': 1}],
-                [TextInput, {'text': str(xni[i]),'color_click': [1, 0, .5, 1], 'readonly':True, 'size_hint_x': 1}],
+                [TextInput, {'text': str(int(xn[i])),'color_click': [1, 0, .5, 1], 'readonly':True, 'size_hint_x': 1}],
+                [TextInput, {'text': str(int(xni[i])),'color_click': [1, 0, .5, 1], 'readonly':True, 'size_hint_x': 1}],
                 [TextInput, {'text': str(random[i]), 'color_click': [1, 0, .5, 1], 'readonly': True, 'size_hint_x': 1}]
             )
         self.my_table.label_panel.visible = False

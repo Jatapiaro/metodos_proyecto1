@@ -1,5 +1,3 @@
-from math import pow as pw
-
 def add_zeroes(n,seedl):
     if len(str(n)) <= seedl:
         return str(n).zfill(seedl)
@@ -21,7 +19,7 @@ def extract_center(n,seedl):
 
 def centros_cuadrados(x,iter=50):
     seedl = len(str(x))
-    div = int(pw(10,seedl))
+    div = float(pow(10,seedl))
     xn = []
     operador = []
     aleatorio = []
@@ -33,7 +31,7 @@ def centros_cuadrados(x,iter=50):
         nz = extract_center(nz,seedl)
         nzi = int(nz)
         aleatorio.append(nzi)
-        random.append((nzi/div))
+        random.append(float(nzi/div))
         x = nzi
         if nzi in xn:
             break

@@ -4,9 +4,9 @@ from Algoritmos.HullDobell import has_complete_sequence
 xo = (aXo+c) mod m
 """
 
-xo = lambda a,x,c,m: ((a*x)+c)%m
+xo = lambda a,x,c,m: float((a*x)+c)%m
 
-xi = lambda a,x,m: (a*x)%m
+xi = lambda a,x,m: float(a*x)%m
 
 def congruencial_lineal(x,a,c,m,iter=50):
     xn = []
@@ -40,7 +40,8 @@ def congruencial_mixto(x,a,c,m,iter=50):
             xni.append(ni)
             random.append(ni/m)
             x = ni
-
+            if ni in xn:
+                break
     return xn,xni,random
 
 

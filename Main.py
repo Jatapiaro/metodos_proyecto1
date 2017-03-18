@@ -1,3 +1,5 @@
+# coding=utf-8
+
 from Algoritmos.Congruenciales import congruencial_lineal,congruencial_mixto,congruencial_multiplicativo
 from ScreenObjects.CongruenciaLinealMock import CongruenciaLinealMock
 from ScreenObjects.CongruenciaLinealData import CongruenciaLinealData
