@@ -38,11 +38,19 @@ class CentrosCuadradosScreen(Screen):
 
     def validate_data(self):
         errores = []
-        l = len(self.semilla.text)
+
         if self.semilla.text == "":
             errores.append("La semilla no puede estar vacia")
-        if l%2 != 0:
-            errores.append("La semilla debe tener un número par de digitos")
+        else:
+            s = int(self.semilla.text)
+            l = len(str(s))
+            if int(self.semilla.text) <= 0:
+                errores.append("La semilla debe ser mayor a cero")
+            if l % 2 != 0:
+                errores.append("La semilla debe tener un número par de digitos")
+
+        if self.iteraciones.text != "" and int(self.iteraciones.text)==0:
+            errores.append("El número de iteraciones debe ser mayor a cero")
 
         if len(errores) == 0:
             self.generador()
@@ -67,7 +75,7 @@ class CentrosCuadradosScreen(Screen):
 
 
     def return_to_menu(self):
-        screen_manager.transition.duration = 1
+        screen_manager.transition.duration = 2
         screen_manager.transition.direction = "right"
         screen_manager.current = 'initial_screen'
 
@@ -75,7 +83,7 @@ class CentrosCuadradosScreen(Screen):
 
 class InitialScreen(Screen):
     def centros(self):
-        screen_manager.transition.duration = 1
+        screen_manager.transition.duration = 2
         screen_manager.transition.direction = "left"
         screen_manager.current = 'centros_screen'
     def close_app(self):

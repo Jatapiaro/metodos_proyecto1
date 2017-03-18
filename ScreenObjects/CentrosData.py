@@ -11,13 +11,14 @@ class CentrosData(BoxLayout):
         self._keyboard = Window.request_keyboard(self._keyboard_closed, self)
         self._keyboard.bind(on_key_down=self._on_keyboard_down)
         self.my_table = Table()
-        self.my_table.cols = 4
-        self.my_table.add_button_row('Generador', 'Operador' , "Aleatorio", "Random")
+        self.my_table.cols = 5
+        self.my_table.add_button_row("n",'Generador', 'Operador' , "Aleatorio", "Random")
         l = len(xn)
         ##print(l)
         for i in range(l):
             self.my_table.add_row(
-                [Button, {'text': str(xn[i]), 'color_widget': [0, 0, 0.5, 1],'color_click': [0, 1, 0, 1],'size_hint_x': 1}],
+                [Button,{'text': str(i), 'color_widget': [0, 0, 0.5, 1], 'color_click': [0, 1, 0, 1], 'size_hint_x': 1}],
+                [TextInput, {'text': str(xn[i]),'color_click': [1, 0, .5, 1], 'readonly':True, 'size_hint_x': 1}],
                 [TextInput, {'text': str(operador[i]),'color_click': [1, 0, .5, 1], 'readonly':True, 'size_hint_x': 1}],
                 [TextInput, {'text': str(aleatorio[i]), 'color_click': [1, 0, .5, 1], 'readonly': True, 'size_hint_x': 1}],
                 [TextInput, {'text': str(random[i]), 'color_click': [1, 0, .5, 1], 'readonly': True, 'size_hint_x': 1}]
