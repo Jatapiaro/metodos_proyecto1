@@ -1,10 +1,10 @@
-from math import gcd as py_gcd
+import math
 
 def has_complete_sequence(a,m,c):
     return coprime(m,c) and divisible_by_factors(a,m) and four_divides(m,a)
 
 def coprime(a,b):
-    return py_gcd(a,b) == 1
+    return math.gcd(a,b) == 1
 
 def prime_factors(m):
     prime_factors = []
