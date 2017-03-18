@@ -3,10 +3,19 @@
 #: import ListItemButton kivy.uix.listview.ListItemButton
 
 <CentrosCuadradosScreen>:
+    ##external_name: internal_name
+    semilla: seed_input
+    iteraciones: iter_input
 
     BoxLayout:
         orientation: "vertical"
-
+        spacing: 7
+        canvas.before:
+            Color:
+                rgb: 0, 0, .4
+            Rectangle:
+                pos: self.pos
+                size: self.size
         BoxLayout:
             orientation: "horizontal"
             BoxLayout:
@@ -15,6 +24,42 @@
         BoxLayout:
             orientation: "horizontal"
             size_hint_y: None
-            height: "40dp"
+            height: "30dp"
             Label:
-                text: "Hola"
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "Semilla: "
+
+            TextInput:
+                id: seed_input
+                input_filter: "int"
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgb: 0, .5, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                text: "Iteraciones: "
+
+            TextInput:
+                id: iter_input
+                input_filter: "int"
+
+
+            Button:
+                text: "Generar n\u00FAmeros"
+                on_press: root.validate_data()
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "30dp"
+            Button:
+                text: "Regresar al men\u00FA principal"
+                on_press: root.return_to_menu()
