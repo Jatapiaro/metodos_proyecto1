@@ -16,10 +16,10 @@ class CentrosMock(BoxLayout):
         for i in range(30):
             self.my_table.add_row(
                 [Button,{'text': str(i), 'color_widget': [0, 0, 0.5, 1], 'color_click': [0, 1, 0, 1], 'size_hint_x': 1}],
-                [TextInput, {'text': '','color_click': [1, 0, .5, 1], 'readonly':True, 'size_hint_x': 1}],
-                [TextInput, {'text': '','color_click': [1, 0, .5, 1], 'readonly':True, 'size_hint_x': 1}],
-                [TextInput, {'text': '', 'color_click': [1, 0, .5, 1], 'readonly': True, 'size_hint_x': 1}],
-                [TextInput, {'text': '', 'color_click': [1, 0, .5, 1], 'readonly': True, 'size_hint_x': 1}]
+                [TextInput, {'text': '','color_click': [.01, .77, .97, 1], 'readonly':True, 'size_hint_x': 1}],
+                [TextInput, {'text': '','color_click': [.01, .77, .97, 1], 'readonly':True, 'size_hint_x': 1}],
+                [TextInput, {'text': '', 'color_click': [.01, .77, .97, 1], 'readonly': True, 'size_hint_x': 1}],
+                [TextInput, {'text': '', 'color_click': [.01, .77, .97, 1], 'readonly': True, 'size_hint_x': 1}]
             )
         self.my_table.label_panel.visible = False
         self.my_table.label_panel.height_widget = 0
