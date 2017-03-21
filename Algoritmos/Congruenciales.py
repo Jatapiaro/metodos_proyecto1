@@ -32,6 +32,8 @@ def congruencial_mixto(x,a,c,m,iter=50):
         xni.append(ni)
         random.append(ni/m)
         x = ni
+        if ni in xn:
+            break
     return xn,xni,random
 
 
