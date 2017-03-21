@@ -143,16 +143,16 @@ class CongruencialMixtoScreen(Screen):
         xni = []
         random =[]
         mensajes = []
-        if has_complete_sequence(a, m, c):
+        b1 = coprime(m, c)
+        b2 = divisible_by_factors(a, m)
+        b3 = four_divides(m, a)
+        if b1 and b2 and b3:
             mensajes.append("Tiene ciclo completo, se realizarón "+ str(m) +" iteraciones")
             the_popup = MixtoPopup()
             the_popup.errores = mensajes
             the_popup.open()
             xn, operador, random = congruencial_mixto(x, a, c, m, m)
         else:
-            b1 = coprime(m,c)
-            b2 = divisible_by_factors(a,m)
-            b3 = four_divides(m,a)
             if b1 == False:
                 mensajes.append("M y C no son primos relativos")
             if b2 == False:
