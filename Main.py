@@ -1,5 +1,6 @@
 # coding=utf-8
 from Algoritmos.Congruenciales import congruencial_lineal,congruencial_mixto,congruencial_multiplicativo
+from Algoritmos.HullDobell import coprime,divisible_by_factors,four_divides,has_complete_sequence
 from ScreenObjects.CongruenciaLinealMock import CongruenciaLinealMock
 from ScreenObjects.CongruenciaLinealData import CongruenciaLinealData
 from Algoritmos.CentrosCuadrados import centros_cuadrados
@@ -17,11 +18,19 @@ from kivy.app import App
 Builder.load_file('Kivy_Files/InitialScreen.kv')
 Builder.load_file('Kivy_Files/CentrosCuadradosScreen.kv')
 Builder.load_file('Kivy_Files/ErrorPopup.kv')
+Builder.load_file('Kivy_Files/MixtoPopup.kv')
 Builder.load_file('Kivy_Files/CongruencialLinealMixtoScreen.kv')
 Builder.load_file('Kivy_Files/GeneradorMultiplicativoScreen.kv')
 
 
 class ErrorPopup(Popup):
+    errores = []
+    def on_open(self):
+        for e in self.errores:
+            self.ids['errord'].add_widget(Label(text=e))
+
+
+class MixtoPopup(Popup):
     errores = []
     def on_open(self):
         for e in self.errores:
@@ -124,6 +133,8 @@ class CongruencialMixtoScreen(Screen):
         screen_manager.current = 'initial_screen'
 
     def generador(self):
+
+        ##coprime(m, c) and divisible_by_factors(a, m) and four_divides(m, a)
         x = int(self.semilla.text)
         a = int(self.a_value.text)
         c = int(self.c_value.text)
@@ -131,11 +142,31 @@ class CongruencialMixtoScreen(Screen):
         xn = []
         xni = []
         random =[]
-        l = len(self.semilla.text)
-        if self.iteraciones.text == "":
-            xn, operador, random = congruencial_mixto(x,a,c,m)
+        mensajes = []
+        if has_complete_sequence(a, m, c):
+            mensajes.append("Tiene ciclo completo, se realizarón "+ str(m) +" iteraciones")
+            the_popup = MixtoPopup()
+            the_popup.errores = mensajes
+            the_popup.open()
+            xn, operador, random = congruencial_mixto(x, a, c, m, m)
         else:
-            xn, operador, random = congruencial_mixto(x,a,c,m,int(self.iteraciones.text))
+            b1 = coprime(m,c)
+            b2 = divisible_by_factors(a,m)
+            b3 = four_divides(m,a)
+            if b1 == False:
+                mensajes.append("M y C no son primos relativos")
+            if b2 == False:
+                mensajes.append("Los factores primos de m no dividen a (a-1)")
+            if b3 == False:
+                mensajes.append("Si 4 divide a M -> divide a (a-1), no se cumple")
+            the_popup = MixtoPopup()
+            the_popup.errores = mensajes
+            the_popup.open()
+            if self.iteraciones.text == "":
+                xn, operador, random = congruencial_mixto(x,a,c,m)
+            else:
+                xn, operador, random = congruencial_mixto(x,a,c,m,int(self.iteraciones.text))
+
         self.ids['drawing_box'].clear_widgets()
         self.ids['drawing_box'].add_widget(CongruenciaLinealData(xn,operador,random))
 
@@ -310,6 +341,7 @@ class CentrosCuadradosScreen(Screen):
         operador = []
         aleatorio = []
         random =[]
+
         l = len(self.semilla.text)
         if self.iteraciones.text == "":
             xn, operador, aleatorio, random = centros_cuadrados(int(self.semilla.text))

@@ -26,22 +26,12 @@ def congruencial_mixto(x,a,c,m,iter=50):
     xn = []
     xni = []
     random = []
-    if has_complete_sequence(a,m,c):
-        for i in range(0,m):
-            xn.append(x)
-            ni = xo(a,x,c,m)
-            xni.append(ni)
-            random.append(ni/m)
-            x = ni
-    else:
-        for i in range(0,iter):
-            xn.append(x)
-            ni = xo(a,x,c,m)
-            xni.append(ni)
-            random.append(ni/m)
-            x = ni
-            if ni in xn:
-                break
+    for i in range(0,iter):
+        xn.append(x)
+        ni = xo(a,x,c,m)
+        xni.append(ni)
+        random.append(ni/m)
+        x = ni
     return xn,xni,random
 
 
