@@ -37,7 +37,7 @@ def congruencial_mixto(x,a,c,m,iter=50):
     return xn,xni,random
 
 
-def congruencial_multiplicativo(x,a,m,iter=20):
+def congruencial_multiplicativo(x,a,m,iter=50):
     xn = []
     xni = []
     random = []
